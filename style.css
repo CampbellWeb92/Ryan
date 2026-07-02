@@ -1,0 +1,412 @@
+/* ==========================================================================
+   RYAN MASSAGE MELROSE - MASTER CSS STYLESHEET
+   Colors: Emerald Green, Gold, Black, White
+   ========================================================================== */
+
+/* --- DESIGN SYSTEM & CSS VARIABLES --- */
+:root {
+    --emerald: #04432c;       /* Deep luxury emerald green */
+    --gold: #c5a85c;          /* Refined champagne gold */
+    --black: #121212;         /* Matte designer black */
+    --white: #FFFFFF;
+    --off-white: #FAF9F6;     /* Light alabaster white section fill */
+    --border-color: #EAEAEA;  /* Base card border line */
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+/* --- RESET & CORE BASE LAYOUT --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--black);
+    background-color: var(--white);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+section {
+    padding: 100px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- TYPOGRAPHY & HEADER ALIGNMENT --- */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: var(--black);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* --- INTERACTIVE ACTION BUTTONS --- */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 36px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    border: 1px solid transparent;
+    min-width: 210px;
+    text-align: center;
+}
+
+.btn-gold {
+    background-color: var(--gold);
+    color: var(--white);
+}
+
+.btn-gold:hover {
+    background-color: transparent;
+    color: var(--gold);
+    border-color: var(--gold);
+}
+
+.btn-outline-white {
+    background-color: transparent;
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-outline-white:hover {
+    background-color: var(--white);
+    color: var(--black);
+    border-color: var(--white);
+}
+
+.btn-emerald {
+    background-color: var(--emerald);
+    color: var(--white);
+}
+
+.btn-emerald:hover {
+    background-color: transparent;
+    color: var(--emerald);
+    border-color: var(--emerald);
+}
+
+/* --- HERO INTRO DISPLAY --- */
+.hero {
+    background: linear-gradient(rgba(4, 67, 44, 0.88), rgba(18, 18, 18, 0.95)), radial-gradient(circle, var(--emerald) 0%, var(--black) 100%);
+    color: var(--white);
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 24px;
+}
+
+.hero h1 {
+    font-family: var(--font-display);
+    font-size: 4.2rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    font-weight: 300;
+    max-width: 680px;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.5px;
+}
+
+/* --- 2. SERVICES GRID MATRIX (2x2 Balanced) --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on desktop layout */
+    gap: 40px;
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: 50px 35px;
+    border: 3px solid var(--border-color); /* Premium thick frame */
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Luxury Emerald Glow Animation */
+.service-card:hover {
+    border-color: var(--emerald);
+    box-shadow: 0 0 25px rgba(4, 67, 44, 0.35);
+    transform: translateY(-6px);
+}
+
+.service-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.9rem;
+    font-weight: 400;
+    color: var(--black);
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: 300;
+}
+
+/* --- 3. PRICING GRID MATRIX (1x3 Symmetrical) --- */
+.pricing-section {
+    background-color: var(--off-white);
+    max-width: 100%;
+}
+
+.pricing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 parallel column columns */
+    gap: 40px;
+    align-items: stretch;
+}
+
+.price-card {
+    background-color: var(--white);
+    padding: 60px 40px;
+    border: 3px solid var(--border-color); /* Premium thick frame */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.price-card.featured {
+    border: 3px solid var(--gold); /* Gold boundary frame accent */
+}
+
+/* Distinct hover configurations */
+.price-card:hover {
+    border-color: var(--emerald);
+    box-shadow: 0 0 25px rgba(4, 67, 44, 0.35);
+    transform: translateY(-6px);
+}
+
+.price-card.featured:hover {
+    border-color: var(--gold);
+    box-shadow: 0 0 25px rgba(197, 168, 92, 0.5);
+    transform: translateY(-6px);
+}
+
+.featured-tag {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.price-card h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 25px;
+    color: var(--black);
+}
+
+.price-features {
+    list-style: none;
+    margin-bottom: 40px;
+    flex-grow: 1; /* Aligns buy buttons along equal dynamic axis */
+}
+
+.price-features li {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 16px;
+    letter-spacing: 0.3px;
+}
+
+.price-features li strong {
+    color: var(--emerald);
+    font-size: 1.15rem;
+    font-family: var(--font-display);
+    margin-left: 6px;
+}
+
+.price-card .btn {
+    width: 100%;
+    margin: 0;
+}
+
+/* --- 4. BUSINESS HOURS LAYOUT CARD --- */
+.hours-modern-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.hours-status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--gold);
+}
+
+.hours-modern-badge p {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: var(--black);
+}
+
+.hours-display-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--white);
+    border: 3px solid var(--border-color); /* Premium thick frame */
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hours-display-card:hover {
+    border-color: var(--emerald);
+    box-shadow: 0 0 25px rgba(4, 67, 44, 0.35);
+    transform: translateY(-4px);
+}
+
+.hours-time-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding-bottom: 25px;
+}
+
+.hours-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #666;
+}
+
+.hours-time {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    color: var(--emerald);
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.hours-note-block p {
+    font-size: 0.85rem;
+    color: #666;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+/* --- 5. CONTACT INQUIRY SECTION --- */
+.contact-section {
+    background-color: var(--black);
+    color: var(--white);
+    max-width: 100%;
+    text-align: center;
+}
+
+.contact-section .section-title {
+    color: var(--white);
+}
+
+.contact-description {
+    font-size: 1rem;
+    font-weight: 300;
+    max-width: 500px;
+    margin: 0 auto 40px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- RESPONSIVE MOBILE MEDIA QUERIES --- */
+@media (max-width: 992px) {
+    /* Collapses multi-column setups into clean, neat single stacked layouts on small screens */
+    .services-grid, 
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    section {
+        padding: 70px 24px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hours-time {
+        font-size: 1.8rem;
+    }
+
+    .hours-display-card {
+        padding: 30px 20px;
+    }
+}

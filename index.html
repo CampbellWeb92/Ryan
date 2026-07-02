@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Massage Melrose | Luxury Wellness</title>
+    <!-- Premium Google Fonts pairing for ultimate luxury typography -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* --- DESIGN SYSTEM & CSS VARIABLES --- */
+        :root {
+            --emerald: #04432c;       /* Ultra-premium, deep emerald */
+            --gold: #c5a85c;          /* Refined champagne gold */
+            --black: #121212;         /* Matte high-end black */
+            --white: #FFFFFF;
+            --off-white: #FAF9F6;     /* Alabaster white accent text */
+            --border-color: #2a2a2a;  /* Visible thick boundary frame */
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        /* --- RESET & BASE STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        /* --- PREMIUM STICKY NAVBAR STYLING --- */
+.main-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(18, 18, 18, 0.92); /* Matte black with premium backdrop glass transparency */
+    backdrop-filter: blur(10px);               /* Cinematic frosted glass blur effect */
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 10000;                            /* Keeps navbar safely layered above all other page content */
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Branding Accent styling */
+.nav-logo {
+    font-family: var(--font-display, 'Cormorant Garamond', serif);
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--white, #FFFFFF);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-logo span {
+    color: var(--gold, #c5a85c);
+    font-weight: bold;
+}
+
+/* Anchors Flex Wrapper */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+/* Base Link Styling: Muted Champagne Gold Tint */
+.nav-links a {
+    font-family: var(--font-body, 'Montserrat', sans-serif);
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gold, #c5a85c);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Links Hover Action State: Turns to Crisp White */
+.nav-links a:hover {
+    color: var(--white, #FFFFFF);
+}
+
+/* Special Button Style for the Last Contact Link */
+.nav-links .nav-cta-btn {
+    border: 2px solid var(--gold, #c5a85c);
+    padding: 10px 22px;
+    border-radius: 4px; /* Matches your card radius layout system */
+    font-weight: 500;
+}
+
+/* Premium Contact Hover Glow Action */
+.nav-links .nav-cta-btn:hover {
+    background-color: var(--gold, #c5a85c);
+    color: var(--black, #121212) !important; /* Forces font dark when solid gold background active */
+    box-shadow: 0 0 15px rgba(197, 168, 92, 0.4);
+}
+
+/* Fix for Hero spacing section because of top layout overlay block */
+.hero {
+    margin-top: 0;
+    padding-top: 140px !important; /* Prevents sticky navbar from covering your hero text */
+}
+
+/* --- MOBILE NAVIGATION BREAKPOINT RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .main-navbar {
+        height: 70px;
+    }
+    
+    .hero {
+        padding-top: 110px !important;
+    }
+    
+    /* Compact row layout structure for tablet/mobile screen viewports */
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .nav-links a {
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .nav-links .nav-cta-btn {
+        padding: 6px 12px;
+    }
+}
+
+/* Clean Hide Condition for Ultra Narrow displays to preserve symmetry */
+@media (max-width: 480px) {
+    /* Hides the structural business hours item text layout shortcut only on smallest mobiles */
+    .nav-links a:nth-child(3) {
+        display: none;
+    }
+}
+
+
+        body {
+            font-family: var(--font-body);
+            color: var(--white);
+            background-color: var(--black);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        section {
+            padding: 100px 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* --- TYPOGRAPHY & HEADER ALIGNMENT --- */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        /* Infinite Hardware-Accelerated Luxury Metallic Glimmer Engine */
+        .section-title, .hero h1 {
+            font-family: var(--font-display);
+            font-size: 3.2rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            background: linear-gradient(120deg, #ffffff 30%, #fceabe 45%, #c5a85c 50%, #fceabe 55%, #ffffff 70%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            animation: textGlimmer 6s linear infinite;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(120deg, #c5a85c 20%, #ffffff 45%, #fceabe 50%, #ffffff 55%, #c5a85c 80%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            animation: textGlimmer 6s linear infinite;
+            font-style: italic;
+        }
+
+        @keyframes textGlimmer {
+            0% { background-position: 200% center; }
+            100% { background-position: 0% center; }
+        }
+
+        .section-subtitle {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* --- BUTTONS --- */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            border: 1px solid transparent;
+            min-width: 210px;
+            text-align: center;
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .btn-gold:hover {
+            background-color: transparent;
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .btn-outline-white {
+            background-color: transparent;
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-outline-white:hover {
+            background-color: var(--white);
+            color: var(--black);
+            border-color: var(--white);
+        }
+
+        .btn-emerald {
+            background-color: var(--emerald);
+            color: var(--white);
+        }
+
+        .btn-emerald:hover {
+            background-color: transparent;
+            color: var(--emerald);
+            border-color: var(--emerald);
+        }
+
+        /* --- 1. HERO INTRO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(4, 67, 44, 0.88), rgba(18, 18, 18, 0.95)), radial-gradient(circle, var(--emerald) 0%, var(--black) 100%);
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 24px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            font-weight: 300;
+            max-width: 680px;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 0.5px;
+        }
+
+        /* --- 2. SERVICES SECTION (Black Box Background + 2x2 Matrix) --- */
+        .dark-services-section {
+            background-color: var(--black);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .service-card {
+            background-color: #1a1a1a;
+            border: 3px solid var(--border-color);
+            padding: 50px 35px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .service-card:hover {
+            border-color: var(--emerald);
+            box-shadow: 0 0 25px rgba(4, 67, 44, 0.35);
+            transform: translateY(-6px);
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.9rem;
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+        }
+
+        /* --- 3. PRICING SECTION (1x4 Horizontal Row) --- */
+        .pricing-section {
+            background-color: #0b0b0b;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .pricing-grid-four {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .price-card {
+            background-color: #1a1a1a;
+            border: 3px solid var(--border-color);
+            padding: 60px 20px 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .price-card.featured {
+            border: 3px solid var(--gold);
+        }
+
+        .price-card:hover {
+            border-color: var(--emerald);
+            box-shadow: 0 0 25px rgba(4, 67, 44, 0.35);
+            transform: translateY(-6px);
+        }
+
+        .price-card.featured:hover {
+            border-color: var(--gold);
+            box-shadow: 0 0 25px rgba(197, 168, 92, 0.5);
+            transform: translateY(-6px);
+        }
+
+        .featured-tag {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .price-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: var(--white);
+            line-height: 1.3;
+        }
+
+        .price-features {
+            list-style: none;
+            margin-bottom: 35px;
+            flex-grow: 1;
+        }
+
+        .price-features li {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+            margin-bottom: 14px;
+            letter-spacing: 0.3px;
+        }
+
+        .price-features li strong {
+            color: var(--gold);
+            font-size: 1.1rem;
+            font-family: var(--font-body), sans-serif;
+            margin-left: 4px;
+        }
+
+        .price-card .btn {
+            width: 100%;
+            margin: 0;
+        }
+
+        /* --- 4. BUSINESS HOURS LAYOUT GRID --- */
+        .hours-modern-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .hours-status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--gold);
+        }
+
+        .hours-modern-badge p {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            color: var(--white);
+        }
+
+     
+        /* --- VISIBLE GRID BUSINESS HOURS --- */
+
+.hours-container {
+    max-width: 600px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: 1fr; /* Solid single-block container grid */
+    gap: 0;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Highly visible card layout with thick borders matching your design system */
+.hours-row {
+    background-color: var(--white, #FFFFFF);
+    border: 3px solid var(--border-color, #EAEAEA); /* Thick visible border */
+    padding: 35px 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Splits day and time into two clean, balanced columns */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Emerald green hover state with structural glow */
+.hours-row:hover {
+    border-color: var(--emerald, #04432c);
+    box-shadow: 0 0 25px rgba(4, 67, 44, 0.35); /* Elegant glow animation */
+    transform: translateY(-4px);
+}
+
+/* Day Typography Alignment */
+.hours-row .day {
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--black, #121212);
+    border-right: 1px solid rgba(0, 0, 0, 0.08); /* Minimal vertical dividing line */
+    padding-right: 15px;
+}
+
+/* Time Typography Alignment */
+.hours-row .time {
+    font-family: var(--font-display, 'Cormorant Garamond', serif);
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--emerald, #04432c);
+    letter-spacing: 1px;
+    padding-left: 15px;
+}
+
+/* Mobile Responsiveness: Stacks cleanly on narrow mobile displays */
+@media (max-width: 500px) {
+    .hours-row {
+        grid-template-columns: 1fr; /* Collapses columns into single neat row items */
+        gap: 15px;
+        padding: 25px 15px;
+    }
+    
+    .hours-row .day {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08); /* Shifts dividing line to horizontal layout */
+        padding-right: 0;
+        padding-bottom: 15px;
+    }
+    
+    .hours-row .time {
+        padding-left: 0;
+        font-size: 1.5rem;
+    }
+}
+
+/* --- 5. CONTACT INQUIRY MATRIX LAYOUT --- */
+.contact-section {
+    background-color: var(--black, #121212); /* Rich backdrop for white header visibility */
+    padding: 100px 24px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Neat parallel split grid */
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    background-color: #1a1a1a;              /* Dark interior card tint */
+    border: 3px solid #2a2a2a;              /* Base premium thick borders */
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;                  /* Removes link underline */
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.contact-card.featured-contact {
+    border-color: #1f3d2a;                  /* Deep emerald boundary frame accent */
+}
+
+/* Base Hover Glow States */
+.contact-card:hover {
+    border-color: var(--gold, #c5a85c);
+    box-shadow: 0 0 25px rgba(197, 168, 92, 0.35); /* Champagne gold glow */
+    transform: translateY(-6px);
+}
+
+.contact-card.featured-contact:hover {
+    border-color: var(--emerald, #04432c);
+    box-shadow: 0 0 25px rgba(4, 67, 44, 0.45);   /* Vibrant emerald glow */
+}
+
+/* Icon Housing Ring */
+.contact-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    background-color: #222222;
+    transition: all 0.4s ease;
+}
+
+.contact-icon-wrapper.gold-glow {
+    color: var(--gold, #c5a85c);
+    border: 1px solid rgba(197, 168, 92, 0.2);
+}
+
+.contact-icon-wrapper.emerald-glow {
+    color: #059669; /* Balanced bright active emerald tint */
+    border: 1px solid rgba(5, 150, 105, 0.2);
+}
+
+/* Scalable Vector Graphic Parameters */
+.contact-icon {
+    width: 28px;
+    height: 28px;
+}
+
+/* Card Typography Customization */
+.contact-card h3 {
+    font-family: var(--font-display, 'Cormorant Garamond', serif);
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--white, #FFFFFF);
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.contact-detail {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+.contact-action-text {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: var(--gold, #c5a85c);
+    border-bottom: 1px dashed rgba(197, 168, 92, 0.4);
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-action-text {
+    color: var(--white, #FFFFFF);
+    border-color: var(--white, #FFFFFF);
+}
+
+/* --- RESPONSIVE MOBILE OVERRIDE --- */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stacks nicely into a clean vertical array on mobile */
+        gap: 25px;
+    }
+    .contact-card {
+        padding: 40px 20px;
+    }
+}
+/* --- PRE-FOOTER BRAND IMAGE CONTAINER --- */
+.pre-footer-showcase {
+    background-color: var(--black, #121212);
+    padding: 60px 24px 80px; /* Strategic spacing between contact and footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Premium 3px Thick Gold Frame */
+.elegant-image-frame {
+    position: relative;
+    max-width: 800px; /* Optimal reading frame block width */
+    width: 100%;
+    border: 3px solid var(--gold, #c5a85c);
+    border-radius: 4px; /* Matches your card radius layout system */
+    overflow: hidden;
+    background-color: #1a1a1a;
+    display: flex;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Base image styling */
+.showcase-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    max-height: 450px; /* Prevents long vertical images from stretching your layout */
+    filter: brightness(0.95);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
+}
+
+/* Infinite Metallic Glimmer Layer overlayed over the frame bounds */
+.elegant-image-frame::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.03) 30%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0.03) 70%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    pointer-events: none; /* Prevents layout link blocking issues */
+}
+
+/* Reactive Hover State Trigger Animations */
+.elegant-image-frame:hover {
+    border-color: #ffffff; /* Smoothly flashes to pure platinum silver */
+    box-shadow: 0 0 35px rgba(197, 168, 92, 0.45); /* Luxury champagne gold glow */
+    transform: translateY(-4px);
+}
+
+/* Triggers the swift metallic shine beam to pass across the picture on hover */
+.elegant-image-frame:hover::after {
+    animation: imageShine 1.2s ease-in-out forwards;
+}
+
+.elegant-image-frame:hover .showcase-img {
+    transform: scale(1.03); /* Cinematic slow zoom effect */
+    filter: brightness(1.05); /* Lifts image brightness levels up elegantly */
+}
+
+/* Keyframe matrix for the metallic sweep ray animation */
+@keyframes imageShine {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 200%;
+    }
+}
+
+/* Responsive adjustment for small mobile touch screen widths */
+@media (max-width: 768px) {
+    .pre-footer-showcase {
+        padding: 40px 24px 60px;
+    }
+    .showcase-img {
+        max-height: 300px;
+    }
+}
+
+/* --- PREMIUM FOOTER STYLING --- */
+footer {
+    background-color: #0b0b0b;                  /* Deep, matte luxury black */
+    color: var(--white, #FFFFFF);               /* Crisp white copyright text */
+    font-family: var(--font-body, 'Montserrat', sans-serif);
+    font-size: 0.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 40px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border separator */
+}
+
+ </style>
+
+    <!-- PREMIUM STICKY NAVIGATION BAR -->
+    <nav class="main-navbar">
+        <div class="nav-container">
+            <!-- Luxury Branding Text Logo -->
+            <a href="#" class="nav-logo">RMM<span>.</span></a>
+            
+            <!-- Structural Navigation Section Anchor Links -->
+            <div class="nav-links">
+                <a href="#services">My Services</a>
+                <a href="#pricing">Massage Rates</a>
+                <a href="#hours">Business Hours</a>
+                <a href="#contact" class="nav-cta-btn">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+     <!-- 1. INTRO / HERO SECTION -->
+    <div class="hero">
+        <span class="section-subtitle">Welcome to Your Ultimate Escape</span>
+        <h1>Ryan <span>Massage Melrose</span></h1>
+
+        <!-- 2. SERVICES SECTION -->
+    <section id="services" class="dark-services-section">
+        <div class="section-header">
+         
+            <h2 class="section-title">My Services</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Swedish Massage</h3>
+                <p>A classic, gentle massage using oil to ease muscle tension and boost relaxation. Long gliding strokes, kneading, and tapping on the body. It increases blood flow, lowers stress, and improves flexibility. It is perfect for beginners and stress relief.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Sensual Massage</h3>
+                <p>Sensual massage is the art of intentional, nurturing touch. Through slow, flowing techniques and mindful presence, it promotes profound relaxation, body awareness, and emotional well-being, offering a space to rest, restore, and reconnect.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Couples Swedish Massage</h3>
+                <p>A shared spa experience where two people get massaged at the same time, in the same private room. Each person has their own massage table and therapist.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Couples Sensual Massage</h3>
+                <p>A shared spa experience where two people get massaged at the same time, in the same private room. Each person has their own massage table and therapist.</p>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- 3. PRICING SECTION -->
+    <section id="pricing" class="pricing-section">
+        <div class="pricing-container">
+            <div class="section-header">
+                
+                <h2 class="section-title">Massage Rates</h2>
+            </div>
+            <div class="pricing-grid-four">
+                <!-- Card 1 -->
+                <div class="price-card">
+                    <h3>Swedish Massage</h3>
+                    <ul class="price-features">
+                        <li>60 Minutes — <strong>R600</strong></li>
+                        <li>90 Minutes — <strong>R1000</strong></li>
+                    </ul>
+                    <a href="#contact" class="btn btn-emerald">Book Now</a>
+                </div>
+
+                <!-- Card 2 (Featured) -->
+                <div class="price-card featured">
+                    <div class="featured-tag">Most Popular</div>
+                    <h3>Sensual Massage</h3>
+                    <ul class="price-features">
+                        <li>60 Minutes — <strong>R800</strong></li>
+                        <li>90 Minutes — <strong>R1200</strong></li>
+                    </ul>
+                    <a href="#contact" class="btn btn-gold">Book Now</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="price-card">
+                    <h3>Couples Swedish Massage</h3>
+                    <ul class="price-features">
+                        <li>60 Minutes — <strong>R1200</strong></li>
+                        <li>90 Minutes — <strong>R2000</strong></li>
+                    </ul>
+                    <a href="#contact" class="btn btn-emerald">Book Now</a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="price-card">
+                    <h3>Couples Sensual Massage</h3>
+                    <ul class="price-features">
+                        <li>60 Minutes — <strong>R1600</strong></li>
+                        <li>90 Minutes — <strong>R2400</strong></li>
+                    </ul>
+                    <a href="#contact" class="btn btn-emerald">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4. BUSINESS HOURS SECTION -->
+     <div class="hours-container"></div>
+    <section id="hours">
+        <div class="section-header">
+            <h2 class="section-title">Business Hours</h2>
+            <span class="section-subtitle">(By Appointment)</span>
+        </div>
+            <div class="hours-row">
+                <span class="day">Monday - Sunday</span>
+                <span class="time">09:00 AM - 09:00 PM</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CONTACT INQUIRY SECTION -->
+    <section id="contact" class="contact-section">
+        <div class="section-header">
+            <span class="section-subtitle">Enquiries</span>
+            <h2 class="section-title">Contact Me</h2>
+        </div>
+        
+        
+        <div class="contact-grid">
+            <!-- Card 1: Direct Mobile Call -->
+            <!-- REPLACE +27123456789 with your real number (include country code, omit spaces or leading zeros) -->
+            <a href="tel:+27637907541" class="contact-card">
+                <div class="contact-icon-wrapper gold-glow">
+                    <!-- Crisp Elegant Phone SVG Icon -->
+                    <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </div>
+                <h3>Direct Call Me</h3>
+                <p class="contact-detail">+27637907541</p>
+                <span class="contact-action-text">Tap to Call Now</span>
+            </a>
+
+            <!-- Card 2: Interactive WhatsApp Chat -->
+            <!-- REPLACE +27123456789 with your real number (include country code, omit spaces or leading zeros) -->
+            <a href="https://wa.me/+27637907541." target="_blank" rel="noopener" class="contact-card featured-contact">
+                <div class="contact-icon-wrapper emerald-glow">
+                    <!-- Crisp Elegant WhatsApp SVG Icon -->
+                    <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                    </svg>
+                </div>
+                <h3>WhatsApp Me</h3>
+                <p class="contact-detail">Instant Message Channel</p>
+                <span class="contact-action-text">Tap to Chat Live</span>
+            </a>
+        </div>
+    </section>
+
+
+</body>
+    <!-- PRE-FOOTER BRAND IMAGE IMAGE -->
+    <div class="pre-footer-showcase">
+        <div class="elegant-image-frame">
+            <!-- REPLACE 'your-image-source.jpg' with your actual image path or URL -->
+            <img src="Ryan.jpg" alt="Ryan Massage Melrose Showcase" class="showcase-img">
+        </div>
+    </div>
+
+<footer>
+    <p>&copy; 2026 Ryan Massage Melrose. All Rights Reserved.</p>
+    <!-- Your Premium Creator Credit Link -->
+    <p class="creator-credit">
+        Proudly made by <a href="https://campbellweb.co.za" target="_blank" rel="noopener">CampbellWeb</a>
+    </p>
+</footer>
