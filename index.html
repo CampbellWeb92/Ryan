@@ -236,6 +236,152 @@
 .hero {
     padding-top: 140px !important;
 }
+/* --- 18+ DISCLAIMER OVERLAY SYSTEM --- */
+.age-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.98); /* Solid dark mask backdrop overlay */
+    backdrop-filter: blur(15px);               /* Heavy frosted-glass desktop & mobile blur blur */
+    -webkit-backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 999999;                           /* Higher index than fixed navbars and top buttons */
+}
+
+/* Modal Inner Box Container */
+.age-modal-box {
+    background-color: #1a1a1a;                 /* Premium dark grey box profile card background color */
+    border: 3px solid var(--gold, #c5a85c);    /* Thick core accent frame wrapper boundary */
+    max-width: 500px;
+    width: 100%;
+    padding: 50px 30px;
+    text-align: center;
+    border-radius: 4px;                        /* Matches component frame style rules */
+    box-shadow: 0 0 35px rgba(197, 168, 92, 0.25);
+}
+
+/* Core Warning Identifier Ring */
+.age-icon-ring {
+    width: 70px;
+    height: 70px;
+    border: 2px solid var(--gold, #c5a85c);
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-body), sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--gold, #c5a85c);
+    background-color: #222222;
+}
+
+.age-modal-box h2 {
+    font-family: var(--font-display, 'Cormorant Garamond', serif);
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--white, #FFFFFF);
+    letter-spacing: 1px;
+}
+
+.age-gold-bar {
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: var(--gold, #c5a85c);
+    margin: 15px auto 25px;
+}
+
+.age-modal-box p {
+    font-family: var(--font-body), sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+
+/* 2-Column Responsive Button Array System */
+.age-button-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.age-btn {
+    padding: 14px;
+    font-family: var(--font-body), sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    border-radius: 4px;
+}
+
+.age-btn-confirm {
+    background-color: var(--gold, #c5a85c);
+    color: #121212;
+    font-weight: 600;
+}
+
+.age-btn-confirm:hover {
+    background-color: transparent;
+    color: var(--gold, #c5a85c);
+    border-color: var(--gold, #c5a85c);
+    box-shadow: 0 0 15px rgba(197, 168, 92, 0.4);
+}
+
+.age-btn-exit {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.age-btn-exit:hover {
+    background-color: #cc3333; /* Crimson fade warning on exit target activation */
+    color: var(--white, #FFFFFF);
+    border-color: #cc3333;
+}
+
+/* --- ULTRA COMPACT MOBILE RESPONSIVE OVERRIDE --- */
+@media (max-width: 480px) {
+    .age-overlay {
+        padding: 15px;
+    }
+    
+    .age-modal-box {
+        padding: 35px 20px;
+    }
+    
+    .age-modal-box h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* Collapses split keys row array vertically on tiny mobile viewports */
+    .age-button-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .age-btn-confirm {
+        order: 1; /* Prioritizes tracking access confirmations to layout position index one */
+    }
+    
+    .age-btn-exit {
+        order: 2;
+        padding: 10px;
+        font-size: 0.75rem;
+    }
+}
 
 /* ==========================================================================
    ⚡ SYSTEM REPAIR MOBILE BREAKPOINT MATRIX (Pure CSS Alignment)
@@ -494,6 +640,47 @@ footer {
 }
 
  </style>
+ <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const ageOverlay = document.getElementById("ageOverlay");
+        
+        // Evaluates if the verification access key is saved in storage tracking memory
+        if (sessionStorage.getItem("ageVerifiedRMM") === "true") {
+            ageOverlay.style.display = "none"; // Bypasses rendering overlay
+        } else {
+            ageOverlay.style.display = "flex"; // Locks screen visibility matrix open
+        }
+    });
+
+    // Confirmation Action Method
+    function verifyAgeAccess() {
+        sessionStorage.setItem("ageVerifiedRMM", "true"); // Saves access profile session authorization token
+        document.getElementById("ageOverlay").style.display = "none"; // Removes layer instantly from viewport
+    }
+
+    // Exit Redirect Method
+    function rejectAgeAccess() {
+        // Safe tracking fallback loop routing visitors away to Google search metrics
+        window.location.href = "https://google.com";
+    }
+</script>
+
+ <body>
+    <!-- 18+ AGE VERIFICATION MODAL -->
+<div id="ageOverlay" class="age-overlay">
+    <div class="age-modal-box">
+        <div class="age-icon-ring">18+</div>
+        <h2>Age Verification</h2>
+        <span class="age-gold-bar"></span>
+        <p>This platform features content explicitly intended for mature audiences. You must be at least 18 years of age to access our premium therapeutic portfolios and session scheduling desks.</p>
+        
+        <div class="age-button-grid">
+            <button class="age-btn age-btn-confirm" onclick="verifyAgeAccess()">I am 18 or Older</button>
+            <button class="age-btn age-btn-exit" onclick="rejectAgeAccess()">Exit</button>
+        </div>
+    </div>
+</div>
+
 
     <!-- FAIL-PROOF RESPONSIVE FIXED NAVBAR -->
     <nav class="main-navbar">
