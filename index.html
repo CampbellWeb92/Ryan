@@ -225,6 +225,7 @@
     border: 2px solid var(--gold, #c5a85c);
     padding: 8px 18px;
     border-radius: 4px;
+   
 }
 
 .nav-links .nav-cta-btn:hover {
@@ -702,6 +703,113 @@ Use code with caution.transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);}.price
         /* grid declaration styles */
     }
 }
+/* --- 5. CONTACT INQUIRY MATRIX LAYOUT --- */
+.contact-section {
+    background-color: var(--black, #121212);
+    padding: 100px 24px;
+}
+
+/* Switches from standard grid structure into a perfectly centered dynamic flex axis */
+.contact-grid {
+    display: flex;
+    justify-content: center; /* Horizontally centers the single item box perfectly on screen */
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contact-card {
+    background-color: #1a1a1a;
+    border: 3px solid #2a2a2a;
+    padding: 50px 30px;
+    max-width: 400px; /* Locks optimal card width execution boundaries on desktop viewports */
+    width: 100%;       /* Fluid width structure scale for small mobile displays */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.contact-card.featured-contact {
+    border-color: #1f3d2a; /* Premium structural deep emerald accent boundary border */
+}
+
+/* Luxury Emerald Hover Glow Profile */
+.contact-card.featured-contact:hover {
+    border-color: var(--emerald, #04432c);
+    box-shadow: 0 0 25px rgba(4, 67, 44, 0.45); /* Ambient neon emerald light cast shadow */
+    transform: translateY(-6px);
+}
+
+/* Icon Housing Ring Layout */
+.contact-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    background-color: #222222;
+}
+
+.contact-icon-wrapper.emerald-glow {
+    color: #059669;
+    border: 1px solid rgba(5, 150, 105, 0.2);
+}
+
+.contact-icon {
+    width: 28px;
+    height: 28px;
+}
+
+/* Typography styles */
+.contact-card h3 {
+    font-family: var(--font-display, 'Cormorant Garamond', serif);
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--white, #FFFFFF);
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.contact-detail {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+.contact-action-text {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: var(--gold, #c5a85c);
+    border-bottom: 1px dashed rgba(197, 168, 92, 0.4);
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-action-text {
+    color: var(--white, #FFFFFF);
+    border-color: var(--white, #FFFFFF);
+}
+
+/* --- MOBILE SEAMLESS OVERRIDES --- */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 70px 16px;
+    }
+    .contact-card {
+        padding: 40px 20px;
+        max-width: 100%; /* Allows card component width to expand fully on small phone touch models */
+    }
+}
+
 /* --- PREMIUM FOOTER STYLING --- */
 footer {
     background-color: #0b0b0b;                  /* Deep, matte luxury black */
@@ -886,26 +994,10 @@ footer {
             <span class="section-subtitle">Enquiries</span>
             <h2 class="section-title">Contact Me</h2>
         </div>
-        
-        
+    
         <div class="contact-grid">
-            <!-- Card 1: Direct Mobile Call -->
-            <!-- REPLACE +27123456789 with your real number (include country code, omit spaces or leading zeros) -->
-            <a href="tel:+27637907541" class="contact-card">
-                <div class="contact-icon-wrapper gold-glow">
-                    <!-- Crisp Elegant Phone SVG Icon -->
-                    <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                    </svg>
-                </div>
-                <h3>Call Me</h3>
-                <p class="contact-detail">+27637907541</p>
-                <span class="contact-action-text">Tap to Call Now</span>
-            </a>
-
-            <!-- Card 2: Interactive WhatsApp Chat -->
-            <!-- REPLACE +27123456789 with your real number (include country code, omit spaces or leading zeros) -->
-            <a href="https://wa.me/+27637907541." target="_blank" rel="noopener" class="contact-card featured-contact">
+            <!-- Card 1: Centered Interactive WhatsApp Chat -->
+            <a href="https://wa.me." target="_blank" rel="noopener" class="contact-card featured-contact">
                 <div class="contact-icon-wrapper emerald-glow">
                     <!-- Crisp Elegant WhatsApp SVG Icon -->
                     <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -918,6 +1010,7 @@ footer {
             </a>
         </div>
     </section>
+
 
     <!-- Floating Back to Top Button Anchor -->
     <a href="#" id="backToTop" class="back-to-top" aria-label="Scroll to top">↑</a>
@@ -937,7 +1030,7 @@ footer {
             <div class="gallery-slider">
                 <div class="slide-item"><img src="Ryan.jpg" alt="Showcase Scene 1" class="showcase-img"></div>
                 <div class="slide-item"><img src="Ryan2.jpg" alt="Showcase Scene 2" class="showcase-img"></div>
-                <div class="slide-item"><img src="image3.jpg" alt="Showcase Scene 3" class="showcase-img"></div>
+                <div class="slide-item"><img src="Ryan3.jpg" alt="Showcase Scene 3" class="showcase-img"></div>
                 <div class="slide-item"><img src="image4.jpg" alt="Showcase Scene 4" class="showcase-img"></div>
                 <div class="slide-item"><img src="image5.jpg" alt="Showcase Scene 5" class="showcase-img"></div>
             </div>
