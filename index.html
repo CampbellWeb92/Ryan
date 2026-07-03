@@ -524,31 +524,55 @@ Use code with caution.transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);}.price
     }
 }
 
-/* Premium 3px Thick Gold Frame */
+/* --- PRE-FOOTER SLIDING GALLERY MATRIX --- */
+.pre-footer-showcase {
+    background-color: var(--black, #121212);
+    padding: 60px 24px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Base Premium Gold Boundary Frame */
 .elegant-image-frame {
     position: relative;
-    max-width: 800px; /* Optimal reading frame block width */
+    max-width: 800px;
     width: 100%;
     border: 3px solid var(--gold, #c5a85c);
-    border-radius: 4px; /* Matches your card radius layout system */
+    border-radius: 4px;
     overflow: hidden;
     background-color: #1a1a1a;
     display: flex;
+    flex-direction: column;
     transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Base image styling */
-.showcase-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    max-height: 450px; /* Prevents long vertical images from stretching your layout */
-    filter: brightness(0.95);
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
+/* Filmstrip Dynamic Track Wrapper */
+.gallery-slider {
+    display: flex;
+    width: 500%; /* 5 items at 100% width each = 500% total track container width */
+    height: 450px; /* Locked desktop frame viewport aspect box tracking height */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth fluid linear glide */
 }
 
-/* Infinite Metallic Glimmer Layer overlayed over the frame bounds */
+/* Individual Slide Windows */
+.slide-item {
+    width: 20%; /* Exactly 1/5th of the total 500% container track */
+    height: 100%;
+    overflow: hidden;
+}
+
+.showcase-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.9);
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+/* --- LIGHT ENGINE FOR GRAPHIC GLIMMER SWEETS --- */
 .elegant-image-frame::after {
     content: '';
     position: absolute;
@@ -565,33 +589,86 @@ Use code with caution.transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);}.price
         rgba(255, 255, 255, 0) 100%
     );
     transform: skewX(-25deg);
-    pointer-events: none; /* Prevents layout link blocking issues */
+    pointer-events: none;
+    z-index: 10;
 }
 
-/* Reactive Hover State Trigger Animations */
+/* Active Hover Transitions Profile */
 .elegant-image-frame:hover {
-    border-color: #ffffff; /* Smoothly flashes to pure platinum silver */
-    box-shadow: 0 0 35px rgba(197, 168, 92, 0.45); /* Luxury champagne gold glow */
+    border-color: #ffffff;
+    box-shadow: 0 0 35px rgba(197, 168, 92, 0.45);
     transform: translateY(-4px);
 }
 
-/* Triggers the swift metallic shine beam to pass across the picture on hover */
 .elegant-image-frame:hover::after {
     animation: imageShine 1.2s ease-in-out forwards;
 }
 
 .elegant-image-frame:hover .showcase-img {
-    transform: scale(1.03); /* Cinematic slow zoom effect */
-    filter: brightness(1.05); /* Lifts image brightness levels up elegantly */
+    transform: scale(1.02);
+    filter: brightness(1.02);
 }
 
-/* Keyframe matrix for the metallic sweep ray animation */
 @keyframes imageShine {
-    0% {
-        left: -150%;
+    0% { left: -150%; }
+    100% { left: 200%; }
+}
+
+/* --- NAVIGATION CONTROL DOTS POSITIONING --- */
+.gallery-navigation-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 20; /* Places dots safely above layout images */
+}
+
+.dot-selector {
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--gold, #c5a85c);
+    border-radius: 50%;
+    background-color: rgba(18, 18, 18, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot-selector:hover {
+    background-color: var(--white, #FFFFFF);
+    border-color: var(--white, #FFFFFF);
+}
+
+/* --- CSS LOGICAL SWITCH PATHWAYS (The Slide Actions) --- */
+#slide1:checked ~ .gallery-slider { transform: translateX(0); }
+#slide2:checked ~ .gallery-slider { transform: translateX(-20%); }
+#slide3:checked ~ .gallery-slider { transform: translateX(-40%); }
+#slide4:checked ~ .gallery-slider { transform: translateX(-60%); }
+#slide5:checked ~ .gallery-slider { transform: translateX(-80%); }
+
+/* Dynamic dot highlighting depending on which item is checked */
+#slide1:checked ~ .gallery-navigation-dots .dot-selector:nth-child(1),
+#slide2:checked ~ .gallery-navigation-dots .dot-selector:nth-child(2),
+#slide3:checked ~ .gallery-navigation-dots .dot-selector:nth-child(3),
+#slide4:checked ~ .gallery-navigation-dots .dot-selector:nth-child(4),
+#slide5:checked ~ .gallery-navigation-dots .dot-selector:nth-child(5) {
+    background-color: var(--gold, #c5a85c);
+    width: 24px; /* Premium capsule layout elongation morph effect */
+    border-radius: 20px;
+}
+
+/* --- MOBILE RESPONSIVE OVERRIDES --- */
+@media (max-width: 768px) {
+    .pre-footer-showcase {
+        padding: 40px 16px 60px;
     }
-    100% {
-        left: 200%;
+    .gallery-slider {
+        height: 280px; /* Reduced box boundary layout height on mobile touch screens */
+    }
+    .gallery-navigation-dots {
+        bottom: 15px;
+        gap: 10px;
     }
 }
 
@@ -702,7 +779,7 @@ footer {
      <!-- 1. INTRO / HERO SECTION -->
     <div class="hero">
         <span class="section-subtitle">Welcome to Your Ultimate Escape</span>
-        <h1>Ryan <span>Massage Melrose</span></h1>
+        <h1>Ryan <span>Massage Melrose</span></h1><br>
 
         <!-- 2. SERVICES SECTION -->
     <section id="services" class="dark-services-section">
@@ -759,6 +836,7 @@ footer {
                     <ul class="price-features">
                         <li>60 Minutes — <strong>R800</strong></li>
                         <li>90 Minutes — <strong>R1200</strong></li>
+                        <li>120 Minutes — <strong>R1600</strong></li>
                     </ul>
                     <a href="#contact" class="btn btn-gold">Book Now</a>
                 </div>
@@ -767,8 +845,8 @@ footer {
                 <div class="price-card">
                     <h3>Couples Swedish Massage</h3>
                     <ul class="price-features">
-                        <li>60 Minutes — <strong>R1200</strong></li>
-                        <li>90 Minutes — <strong>R2000</strong></li>
+                        <li>60 Minutes — <strong>R1600</strong></li>
+                        <li>90 Minutes — <strong>R2400</strong></li>
                     </ul>
                     <a href="#contact" class="btn btn-emerald">Book Now</a>
                 </div>
@@ -777,8 +855,9 @@ footer {
                 <div class="price-card">
                     <h3>Couples Sensual Massage</h3>
                     <ul class="price-features">
-                        <li>60 Minutes — <strong>R1600</strong></li>
-                        <li>90 Minutes — <strong>R2400</strong></li>
+                        <li>60 Minutes — <strong>R2200</strong></li>
+                        <li>90 Minutes — <strong>R2800</strong></li>
+                        <li>120 Minutes — <strong>R3500</strong></li>
                     </ul>
                     <a href="#contact" class="btn btn-emerald">Book Now</a>
                 </div>
@@ -844,13 +923,36 @@ footer {
     <a href="#" id="backToTop" class="back-to-top" aria-label="Scroll to top">↑</a>
 
 </body>
-    <!-- PRE-FOOTER BRAND IMAGE IMAGE -->
+       <!-- PRE-FOOTER SLIDING IMAGE GALLERY SHOWCASE -->
     <div class="pre-footer-showcase">
         <div class="elegant-image-frame">
-            <!-- REPLACE 'your-image-source.jpg' with your actual image path or URL -->
-            <img src="Ryan.jpg" alt="Ryan Massage Melrose Showcase" class="showcase-img">
+            <!-- Hidden Radio Controls for Slide Positioning Trigger Blocks -->
+            <input type="radio" name="gallery-toggle" id="slide1" checked hidden>
+            <input type="radio" name="gallery-toggle" id="slide2" hidden>
+            <input type="radio" name="gallery-toggle" id="slide3" hidden>
+            <input type="radio" name="gallery-toggle" id="slide4" hidden>
+            <input type="radio" name="gallery-toggle" id="slide5" hidden>
+
+            <!-- Rolling Filmstrip Container Area Matrix -->
+            <div class="gallery-slider">
+                <div class="slide-item"><img src="Ryan.jpg" alt="Showcase Scene 1" class="showcase-img"></div>
+                <div class="slide-item"><img src="Ryan2.jpg" alt="Showcase Scene 2" class="showcase-img"></div>
+                <div class="slide-item"><img src="image3.jpg" alt="Showcase Scene 3" class="showcase-img"></div>
+                <div class="slide-item"><img src="image4.jpg" alt="Showcase Scene 4" class="showcase-img"></div>
+                <div class="slide-item"><img src="image5.jpg" alt="Showcase Scene 5" class="showcase-img"></div>
+            </div>
+
+            <!-- Sleek Horizontal Navigation Dots Interface -->
+            <div class="gallery-navigation-dots">
+                <label for="slide1" class="dot-selector"></label>
+                <label for="slide2" class="dot-selector"></label>
+                <label for="slide3" class="dot-selector"></label>
+                <label for="slide4" class="dot-selector"></label>
+                <label for="slide5" class="dot-selector"></label>
+            </div>
         </div>
     </div>
+
 
 <footer>
     <p>&copy; 2026 Ryan Massage Melrose | All Rights Reserved.</p>
