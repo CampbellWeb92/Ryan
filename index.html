@@ -2,24 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Your highly optimized cross-device viewport meta boundary line tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Ryan Massage Melrose | Luxury Wellness</title>
     
-    <!-- Premium Google Fonts pairing for ultimate luxury typography -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
         /* --- DESIGN SYSTEM & CSS VARIABLES --- */
         :root {
-            --emerald: #04432c;       /* Ultra-premium, deep emerald */
-            --gold: #c5a85c;          /* Refined champagne gold */
-            --black: #121212;         /* Matte high-end black */
+            --emerald: #04432c;       
+            --gold: #c5a85c;          
+            --black: #121212;         
             --white: #FFFFFF;
-            --off-white: #FAF9F6;     /* Alabaster white accent text */
-            --border-color: #2a2a2a;  /* Visible thick boundary frame */
+            --border-color: #2a2a2a;  
             --font-display: 'Cormorant Garamond', serif;
             --font-body: 'Montserrat', sans-serif;
         }
@@ -29,7 +26,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent; /* Removes blue box tap flash on mobile */
+            -webkit-tap-highlight-color: transparent;
         }
 
         html {
@@ -44,7 +41,7 @@
             background-color: var(--black);
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden; /* Rigidly blocks horizontal scrolling layouts */
+            overflow-x: hidden; 
         }
 
         section {
@@ -61,7 +58,7 @@
 
         .section-title, .hero h1 {
             font-family: var(--font-display);
-            font-size: clamp(2.2rem, 5vw, 3.5rem); /* Dynamic typography scales perfectly on mobile screen states */
+            font-size: clamp(2.2rem, 5vw, 3.5rem); 
             font-weight: 300;
             letter-spacing: 2px;
             margin-bottom: 12px;
@@ -73,17 +70,6 @@
             text-fill-color: transparent;
             animation: textGlimmer 6s linear infinite;
             line-height: 1.2;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(120deg, #c5a85c 20%, #ffffff 45%, #fceabe 50%, #ffffff 55%, #c5a85c 80%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
-            animation: textGlimmer 6s linear infinite;
-            font-style: italic;
         }
 
         @keyframes textGlimmer {
@@ -113,7 +99,7 @@
 
         .btn {
             display: inline-block;
-            padding: 16px 36px; /* Meets Touch Target minimum size requirements */
+            padding: 16px 36px; 
             font-size: 0.8rem;
             font-weight: 500;
             text-decoration: none;
@@ -149,346 +135,165 @@
             border-color: var(--white);
         }
 
-        .btn-emerald {
-            background-color: var(--emerald);
-            color: var(--white);
-        }
-
-        .btn-emerald:hover {
-            background-color: transparent;
-            color: var(--emerald);
-            border-color: var(--emerald);
-        }
-
         /* --- PREMIUM STICKY NAVBAR BASE --- */
-.main-navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(18, 18, 18, 0.95); /* Matte black luxury glass panel */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    z-index: 99999; /* Enforces supreme layering above all images and grid shadows */
-    padding: 15px 0;
-}
+        .main-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(18, 18, 18, 0.95); 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 99999; 
+            padding: 15px 0;
+        }
 
-.nav-container {
-    max-width: 1400px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .nav-container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-/* Brand Text Customizations */
-.nav-logo {
-    font-family: var(--font-display, 'Cormorant Garamond', serif);
-    font-size: 2rem;
-    font-weight: 400;
-    color: var(--white, #FFFFFF);
-    text-decoration: none;
-    letter-spacing: 1px;
-}
-
-.nav-logo span {
-    color: var(--gold, #c5a85c);
-}
-
-/* Horizontal Inline Flex Links Desktop Array */
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.nav-links a {
-    font-family: var(--font-body, 'Montserrat', sans-serif);
-    font-size: 0.8rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--gold, #c5a85c);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--white, #FFFFFF);
-}
-
-/* Refined Contact Button */
-.nav-links .nav-cta-btn {
-    border: 2px solid var(--gold, #c5a85c);
-    padding: 8px 18px;
-    border-radius: 4px;
-   
-}
-
-.nav-links .nav-cta-btn:hover {
-    background-color: var(--gold, #c5a85c);
-    color: var(--black, #121212);
-}
-
-/* Global Hero adjustment so content isn't buried behind the header */
-.hero {
-    padding-top: 140px !important;
-}
-/* --- 18+ DISCLAIMER OVERLAY SYSTEM --- */
-.age-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(10, 10, 10, 0.98); /* Solid dark mask backdrop overlay */
-    backdrop-filter: blur(15px);               /* Heavy frosted-glass desktop & mobile blur blur */
-    -webkit-backdrop-filter: blur(15px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    z-index: 999999;                           /* Higher index than fixed navbars and top buttons */
-}
-
-/* Modal Inner Box Container */
-.age-modal-box {
-    background-color: #1a1a1a;                 /* Premium dark grey box profile card background color */
-    border: 3px solid var(--gold, #c5a85c);    /* Thick core accent frame wrapper boundary */
-    max-width: 500px;
-    width: 100%;
-    padding: 50px 30px;
-    text-align: center;
-    border-radius: 4px;                        /* Matches component frame style rules */
-    box-shadow: 0 0 35px rgba(197, 168, 92, 0.25);
-}
-
-/* Core Warning Identifier Ring */
-.age-icon-ring {
-    width: 70px;
-    height: 70px;
-    border: 2px solid var(--gold, #c5a85c);
-    border-radius: 50%;
-    margin: 0 auto 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-body), sans-serif;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--gold, #c5a85c);
-    background-color: #222222;
-}
-
-.age-modal-box h2 {
-    font-family: var(--font-display, 'Cormorant Garamond', serif);
-    font-size: 2.2rem;
-    font-weight: 400;
-    color: var(--white, #FFFFFF);
-    letter-spacing: 1px;
-}
-
-.age-gold-bar {
-    display: block;
-    width: 50px;
-    height: 2px;
-    background-color: var(--gold, #c5a85c);
-    margin: 15px auto 25px;
-}
-
-.age-modal-box p {
-    font-family: var(--font-body), sans-serif;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
-    margin-bottom: 35px;
-    font-weight: 300;
-}
-
-/* 2-Column Responsive Button Array System */
-.age-button-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
-.age-btn {
-    padding: 14px;
-    font-family: var(--font-body), sans-serif;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 500;
-    cursor: pointer;
-    border: 1px solid transparent;
-    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-    border-radius: 4px;
-}
-
-.age-btn-confirm {
-    background-color: var(--gold, #c5a85c);
-    color: #121212;
-    font-weight: 600;
-}
-
-.age-btn-confirm:hover {
-    background-color: transparent;
-    color: var(--gold, #c5a85c);
-    border-color: var(--gold, #c5a85c);
-    box-shadow: 0 0 15px rgba(197, 168, 92, 0.4);
-}
-
-.age-btn-exit {
-    background-color: transparent;
-    color: rgba(255, 255, 255, 0.5);
-    border-color: rgba(255, 255, 255, 0.15);
-}
-
-.age-btn-exit:hover {
-    background-color: #cc3333; /* Crimson fade warning on exit target activation */
-    color: var(--white, #FFFFFF);
-    border-color: #cc3333;
-}
-
-/* --- ULTRA COMPACT MOBILE RESPONSIVE OVERRIDE --- */
-@media (max-width: 480px) {
-    .age-overlay {
-        padding: 15px;
-    }
-    
-    .age-modal-box {
-        padding: 35px 20px;
-    }
-    
-    .age-modal-box h2 {
-        font-size: 1.8rem;
-    }
-    
-    /* Collapses split keys row array vertically on tiny mobile viewports */
-    .age-button-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-    
-    .age-btn-confirm {
-        order: 1; /* Prioritizes tracking access confirmations to layout position index one */
-    }
-    
-    .age-btn-exit {
-        order: 2;
-        padding: 10px;
-        font-size: 0.75rem;
-    }
-}
-
-/* ==========================================================================
-   ⚡ SYSTEM REPAIR MOBILE BREAKPOINT MATRIX (Pure CSS Alignment)
-   ========================================================================== */
-@media (max-width: 768px) {
-    .main-navbar {
-        padding: 12px 0;
-    }
-
-    /* Converts your navbar layout from a side-by-side array into two neat rows */
-    .nav-container {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-    }
-
-    .nav-logo {
-        font-size: 1.6rem;
-    }
-
-    /* Centers the structural navigation row block perfectly within small screen parameters */
-    .nav-links {
-        width: 100%;
-        justify-content: center;
-        gap: 16px; /* Tight, readable spacing metric built exclusively for touch screens */
-        flex-wrap: wrap; /* Prevents text elements from stretching or clipping out of bounds */
-    }
-
-    .nav-links a {
-        font-size: 0.75rem;
-        letter-spacing: 0.5px;
-    }
-
-    .nav-links .nav-cta-btn {
-        padding: 6px 12px;
-    }
-
-    /* Adjusts the top padding on mobile devices so the hero section balances perfectly */
-    .hero {
-        padding-top: 160px !important;
-    }
-}
+        .nav-logo {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--white, #FFFFFF);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
 
 
-        /* --- 1. HERO INTRO SECTION --- */
+        .nav-logo span {
+            color: var(--gold, #c5a85c);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-family: var(--font-body, 'Montserrat', sans-serif);
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); 
+        }
+
+        .nav-links a:hover {
+            color: var(--white, #FFFFFF);
+        }
+
+        .nav-links .nav-cta-btn {
+            border: 2px solid var(--gold);
+            padding: 8px 18px;
+            border-radius: 4px;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links .nav-cta-btn:hover {
+            background-color: var(--gold);
+            color: var(--black);
+        }
+
+        /* --- HERO SECTION --- */
         .hero {
-            background: linear-gradient(rgba(4, 67, 44, 0.88), rgba(18, 18, 18, 0.95)), radial-gradient(circle, var(--emerald) 0%, var(--black) 100%);
-            min-height: 90vh;
+            text-align: center;
+            padding: clamp(160px, 15vw, 220px) 24px clamp(80px, 10vw, 120px) 24px !important;
+            background: linear-gradient(rgba(18, 18, 18, 0.75), rgba(18, 18, 18, 0.85)), url('msggreen.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-bottom: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 140px 24px 60px;
+            justify-content: center;
+            min-height: 80vh; 
         }
 
-        .hero p {
-            font-size: clamp(1rem, 2.5vw, 1.15rem);
-            font-weight: 300;
-            max-width: 680px;
-            margin-bottom: 40px;
-            color: rgba(255, 255, 255, 0.8);
-            letter-spacing: 0.5px;
-        }
-
-        /* --- 2. SERVICES SECTION --- */
+        /* --- FIXED & LIVE TESTING SERVICES LAYOUT --- */
         .dark-services-section {
             background-color: var(--black);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            width: 100%;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: clamp(20px, 4vw, 40px);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            width: 100%;
         }
 
         .service-card {
-            background-color: #1a1a1a;
-            border: 3px solid var(--border-color);
-            padding: clamp(30px, 5vw, 50px) clamp(20px, 4vw, 35px);
-            text-align: center;
+            background-color: #1a1a1a; 
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden; 
             display: flex;
             flex-direction: column;
-            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .service-card:hover {
-            border-color: var(--emerald);
-            box-shadow: 0 0 25px rgba(4, 67, 44, 0.35);
-            transform: translateY(-6px);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(197, 168, 92, 0.15); 
         }
 
-        .service-card h3 {
+        .service-image-wrapper {
+            width: 100%;
+            height: 200px; 
+            overflow: hidden;
+            background-color: #222; /* Fallback gray if local files are missing */
+        }
+
+        .service-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            display: block;
+        }
+
+        .service-card-content {
+            padding: 24px;
+        }
+
+        .service-card-content h3 {
             font-family: var(--font-display);
-            font-size: clamp(1.5rem, 3vw, 1.9rem);
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 12px;
             font-weight: 400;
-            color: var(--white);
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
-        .service-card p {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 300;
+        .service-card-content p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.85); 
+            line-height: 1.6;
+        }
+
+        .age-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 10, 10, 0.98);
+            z-index: 999999;
+            display: none; 
         }
 
         /* --- 3. PRICING SECTION --- */
@@ -615,31 +420,26 @@ Use code with caution.transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);}.price
     100% { left: 200%; }
 }
 
-/* --- NAVIGATION CONTROL DOTS POSITIONING --- */
-.gallery-navigation-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 12px;
-    z-index: 20; /* Places dots safely above layout images */
-}
-
-.dot-selector {
-    width: 10px;
-    height: 10px;
-    border: 2px solid var(--gold, #c5a85c);
-    border-radius: 50%;
-    background-color: rgba(18, 18, 18, 0.6);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.dot-selector:hover {
-    background-color: var(--white, #FFFFFF);
-    border-color: var(--white, #FFFFFF);
-}
+//* ==========================================================================
+           ⚡ MOBILE VIEWPORT MEDIA QUERIES
+           ========================================================================== */
+        @media (max-width: 768px) {
+            .highlight-box {
+                padding: 20px;
+                margin-top: 30px;
+                max-width: 100%;
+            }
+            .highlight-box p {
+                font-size: 0.9rem;
+            }
+            .gallery-grid-three {
+                grid-template-columns: 1fr;        
+                gap: 25px;
+            }
+            .hero {
+                min-height: 60vh;
+            }
+        }
 
 /* --- CSS LOGICAL SWITCH PATHWAYS (The Slide Actions) --- */
 #slide1:checked ~ .gallery-slider { transform: translateX(0); }
@@ -867,60 +667,92 @@ footer {
 </div>
 
 
-    <!-- FAIL-PROOF RESPONSIVE FIXED NAVBAR -->
+<!-- Sticky Navbar Block -->
     <nav class="main-navbar">
         <div class="nav-container">
-            <!-- Branding Text Logo -->
-            <a href="#" class="nav-logo">RMM<span>.</span></a>
-            
-            <!-- Direct Inline Navigation Links -->
+            <a href="#" class="nav-logo">R<span>MM.</span></a>
             <div class="nav-links">
                 <a href="#services">Services</a>
-                <a href="#pricing">Rates</a>
+                <a href="#rates">Rates</a>
                 <a href="#hours">Hours</a>
-                <a href="#contact" class="nav-cta-btn">Contact Me</a>
+                <a href="#gallery">gallery</a>
+                <a href="#contact" class="nav-cta-btn">Book Now</a>
             </div>
         </div>
     </nav>
 
+ <!-- Luxury Hero Block with Visual Text Clear Guardrails -->
+<header class="hero">
+    <span class="section-subtitle">Welcome to Your Ultimate Escape</span>
+    <h1>Ryan <span>Massage Melrose</span></h1><br>
+    
+    <div class="btn-container">
+        <!-- ADDED: Your primary Book Now call-to-action button -->
+        <a href="#contact" class="btn btn-gold">Book Now</a>
+        
+        <a href="#services" class="btn btn-outline-white">Explore Services</a>
+        <a href="#about" class="btn btn-outline-white">Our Philosophy</a>
+    </div>
+</header>
 
-     <!-- 1. INTRO / HERO SECTION -->
-    <div class="hero">
-        <span class="section-subtitle">Welcome to Your Ultimate Escape</span>
-        <h1>Ryan <span>Massage Melrose</span></h1><br>
-
-        <!-- 2. SERVICES SECTION -->
-    <section id="services" class="dark-services-section">
-        <div class="section-header">
-         
-            <h2 class="section-title">My Services</h2>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
+        
+ <!-- 2. SERVICES SECTION -->
+<section id="services" class="dark-services-section">
+    <div class="section-header">
+        <h2 class="section-title">My Services</h2>
+    </div>
+    <div class="services-grid">
+        
+        <!-- CARD 1 -->
+        <div class="service-card">
+            <div class="service-image-wrapper">
+                <img src="images/msg.png" alt="Swedish Massage">
+            </div>
+            <div class="service-card-content">
                 <h3>Swedish Massage</h3>
                 <p>A classic, gentle massage using oil to ease muscle tension and boost relaxation. Long gliding strokes, kneading, and tapping on the body. It increases blood flow, lowers stress, and improves flexibility. It is perfect for beginners and stress relief.</p>
             </div>
+        </div>
 
-            <div class="service-card">
+        <!-- CARD 2 -->
+        <div class="service-card">
+            <div class="service-image-wrapper">
+                <img src="images/table.png" alt="Sensual Massage">
+            </div>
+            <div class="service-card-content">
                 <h3>Sensual Massage</h3>
                 <p>Sensual massage is the art of intentional, nurturing touch. Through slow, flowing techniques and mindful presence, it promotes profound relaxation, body awareness, and emotional well-being, offering a space to rest, restore, and reconnect.</p>
             </div>
+        </div>
 
-            <div class="service-card">
+        <!-- CARD 3 -->
+        <div class="service-card">
+            <div class="service-image-wrapper">
+                <!-- FIXED: Stripped out the broken CSS url() format -->
+                <img src="images/msggreen.png" alt="Couples Swedish Massage">
+            </div>
+            <div class="service-card-content">
                 <h3>Couples Swedish Massage</h3>
                 <p>A shared spa experience where two people get massaged at the same time, in the same private room. Each person has their own massage table and therapist.</p>
             </div>
+        </div>
 
-            <div class="service-card">
+        <!-- CARD 4 -->
+        <div class="service-card">
+            <div class="service-image-wrapper">
+                <img src="images/greenmsg.png" alt="Couples Sensual Massage">
+            </div>
+            <div class="service-card-content">
                 <h3>Couples Sensual Massage</h3>
                 <p>A shared sensual massage experience where two people get massaged at the same time, in the same private room. Each person has their own massage table and sensual therapist.</p>
             </div>
         </div>
-    </section>
 
+    </div>
+</section>
 
         <!-- 3. PRICING SECTION -->
-    <section id="pricing" class="pricing-section">
+    <section id="rates" class="pricing-section">
         <div class="pricing-container">
             <div class="section-header">
                 
@@ -1017,6 +849,7 @@ footer {
 
 </body>
        <!-- PRE-FOOTER SLIDING IMAGE GALLERY SHOWCASE -->
+    <section id="gallery" class="pre-footer-showcase"></section>
     <div class="pre-footer-showcase">
         <div class="elegant-image-frame">
             <!-- Hidden Radio Controls for Slide Positioning Trigger Blocks -->
@@ -1042,7 +875,6 @@ footer {
             </div>
         </div>
     </div>
-
 
 <footer>
     <p>&copy; 2026 Ryan Massage Melrose | All Rights Reserved</p>
