@@ -285,16 +285,114 @@
             line-height: 1.6;
         }
 
-        .age-overlay {
+             /* --- FIXED ADULT DISCLAIMER LAYOUT ENGINE --- */
+        .age-gate-backdrop {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(10, 10, 10, 0.98);
-            z-index: 999999;
-            display: none; 
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(10, 10, 10, 0.98); /* Heavy cover barrier */
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 999999; /* Higher than your sticky navbar element */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
+        /* State trigger forcing sudden dynamic rendering */
+        .age-gate-backdrop.layout-visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .age-gate-container {
+            background-color: #141414;
+            border: 1px solid #c5a85c; /* Using your custom --gold color variable */
+            padding: clamp(30px, 5vw, 60px) clamp(20px, 4vw, 40px);
+            max-width: 500px;
+            width: 100%;
+            border-radius: 12px;
+            text-align: center;
+            transform: scale(0.95);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        }
+
+        .age-gate-backdrop.layout-visible .age-gate-container {
+            transform: scale(1);
+        }
+
+        .gold-badge-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #c5a85c;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .display-gate-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            color: #ffffff;
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+
+        .gate-description {
+            font-size: 0.85rem;
+            color: #a0a0a0;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .gate-action-row {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .gate-btn {
+            padding: 14px 28px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            min-width: 180px;
+            transition: all 0.3s ease;
+        }
+
+        .gate-btn-fill {
+            background-color: #c5a85c;
+            color: #121212;
+        }
+
+        .gate-btn-fill:hover {
+            background-color: transparent;
+            color: #c5a85c;
+            border-color: #c5a85c;
+        }
+
+        .gate-btn-outline {
+            background-color: transparent;
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .gate-btn-outline:hover {
+            background-color: #ffffff;
+            color: #121212;
+        }
+
 
         /* --- 3. PRICING SECTION --- */
         .pricing-section {
@@ -625,46 +723,50 @@ footer {
 }
 
  </style>
- <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const ageOverlay = document.getElementById("ageOverlay");
-        
-        // Evaluates if the verification access key is saved in storage tracking memory
-        if (sessionStorage.getItem("ageVerifiedRMM") === "true") {
-            ageOverlay.style.display = "none"; // Bypasses rendering overlay
-        } else {
-            ageOverlay.style.display = "flex"; // Locks screen visibility matrix open
+<!-- --- GATE CONTROLLER INTERACTION ENGINE --- -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const overlay = document.getElementById('disclaimerOverlay');
+        const passButton = document.getElementById('btnAgeVerifyPass');
+        const failButton = document.getElementById('btnAgeVerifyFail');
+
+        // Check if user has already passed validation previously
+        if (!localStorage.getItem('adultVerifiedUser')) {
+            overlay.classList.add('layout-visible');
+            document.body.style.overflow = 'hidden'; // Freeze site interactions
         }
+
+        // Logic action path: User validates legal age
+        passButton.addEventListener('click', () => {
+            localStorage.setItem('adultVerifiedUser', 'true');
+            overlay.classList.remove('layout-visible');
+            document.body.style.overflow = ''; // Unlock site mechanics
+        });
+
+        // Logic action path: User fails validation
+        failButton.addEventListener('click', () => {
+            // Re-route underage traffic safely away to a secure platform search window
+            window.location.href = 'https://google.com'; 
+        });
     });
-
-    // Confirmation Action Method
-    function verifyAgeAccess() {
-        sessionStorage.setItem("ageVerifiedRMM", "true"); // Saves access profile session authorization token
-        document.getElementById("ageOverlay").style.display = "none"; // Removes layer instantly from viewport
-    }
-
-    // Exit Redirect Method
-    function rejectAgeAccess() {
-        // Safe tracking fallback loop routing visitors away to Google search metrics
-        window.location.href = "https://google.com";
-    }
 </script>
 
+
  <body>
-    <!-- 18+ AGE VERIFICATION MODAL -->
-<div id="ageOverlay" class="age-overlay">
-    <div class="age-modal-box">
-        <div class="age-icon-ring">18+</div>
-        <h2>Age Verification</h2>
-        <span class="age-gold-bar"></span>
-        <p>This platform features content explicitly intended for mature audiences. You must be at least 18 years of age to access our premium therapeutic portfolios and session scheduling desks.</p>
+   <!-- --- R18 CONTROL OVERLAY BACKDROP --- -->
+<div id="disclaimerOverlay" class="age-gate-backdrop" role="alertdialog" aria-modal="true">
+    <div class="age-gate-container">
+        <span class="gold-badge-label">Verification Required</span>
+        <h2 class="display-gate-title">Are you 18 or older?</h2>
+        <p class="gate-description">This exclusive wellness platform contains services intended solely for adult audiences. Please confirm your profile eligibility to view treatments.</p>
         
-        <div class="age-button-grid">
-            <button class="age-btn age-btn-confirm" onclick="verifyAgeAccess()">I am 18 or Older</button>
-            <button class="age-btn age-btn-exit" onclick="rejectAgeAccess()">Exit</button>
+        <div class="gate-action-row">
+            <button id="btnAgeVerifyPass" class="gate-btn gate-btn-fill">Yes, Enter Site</button>
+            <button id="btnAgeVerifyFail" class="gate-btn gate-btn-outline">No, Exit</button>
         </div>
     </div>
 </div>
+
 
 
 <!-- Sticky Navbar Block -->
