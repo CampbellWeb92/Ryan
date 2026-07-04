@@ -222,6 +222,51 @@
             justify-content: center;
             min-height: 80vh; 
         }
+                /* --- OUR PHILOSOPHY SECTION STYLES --- */
+        .philosophy-section {
+            background-color: var(--black);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: auto;
+            border-bottom: 1px solid var(--border-color);
+            padding: clamp(60px, 8vw, 100px) 24px;
+        }
+
+        .philosophy-section div {
+            max-width: 800px; /* Limits reading width for elegant typography layout */
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .philosophy-section h3 {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 5vw, 3.5rem); 
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            
+            /* Applies matching premium gold glimmer animation from your hero title */
+            background: linear-gradient(120deg, #ffffff 30%, #fceabe 45%, #c5a85c 50%, #fceabe 55%, #ffffff 70%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            animation: textGlimmer 6s linear infinite;
+        }
+
+        .philosophy-section p {
+            font-family: var(--font-body);
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.85); /* Slightly muted off-white for reading comfort */
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+            font-weight: 300;
+        }
+
 
         /* --- FIXED & LIVE TESTING SERVICES LAYOUT --- */
         .dark-services-section {
@@ -767,13 +812,12 @@ footer {
     </div>
 </div>
 
-
-
 <!-- Sticky Navbar Block -->
     <nav class="main-navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">R<span>MM.</span></a>
             <div class="nav-links">
+                <a href="#philosophy">Our Philosophy</a>
                 <a href="#services">Services</a>
                 <a href="#rates">Rates</a>
                 <a href="#hours">Hours</a>
@@ -791,12 +835,23 @@ footer {
     <div class="btn-container">
         <!-- ADDED: Your primary Book Now call-to-action button -->
         <a href="#contact" class="btn btn-gold">Book Now</a>
-        
         <a href="#services" class="btn btn-outline-white">Explore Services</a>
-        <a href="#about" class="btn btn-outline-white">Our Philosophy</a>
+        <a href="#philosophy" class="btn btn-outline-white">Learn Our Philosophy</a>
+
     </div>
 </header>
 
+<section>
+    
+            
+ <!-- OUR PHILOSOPHY -->
+  <section id="philosophy" class="philosophy-section">
+    <div>
+        <h3>Our Philosophy</h3>
+        <p>At Ryan Massage Melrose, my mission is to provide every client with a relaxing, rejuvenating, and personalized massage experience. I understand the importance of taking time to unwind from the demands of everyday life, which is why I have created a peaceful and welcoming space where you can truly switch off and recharge. Every treatment is tailored to your individual needs, ensuring you receive the highest level of care and leave feeling refreshed, restored, and completely relaxed.
+</p>
+    </div>
+  </section>
         
  <!-- 2. SERVICES SECTION -->
 <section id="services" class="dark-services-section">
@@ -819,7 +874,7 @@ footer {
         <!-- CARD 2 -->
         <div class="service-card">
             <div class="service-image-wrapper">
-                <img src="images/table.png" alt="Sensual Massage">
+                <img src="images/greenmsg.png" alt="Sensual Massage">
             </div>
             <div class="service-card-content">
                 <h3>Sensual Massage</h3>
@@ -831,7 +886,7 @@ footer {
         <div class="service-card">
             <div class="service-image-wrapper">
                 <!-- FIXED: Stripped out the broken CSS url() format -->
-                <img src="images/msggreen.png" alt="Couples Swedish Massage">
+                <img src="images/table.png" alt="Couples Swedish Massage">
             </div>
             <div class="service-card-content">
                 <h3>Couples Swedish Massage</h3>
@@ -842,7 +897,7 @@ footer {
         <!-- CARD 4 -->
         <div class="service-card">
             <div class="service-image-wrapper">
-                <img src="images/greenmsg.png" alt="Couples Sensual Massage">
+                <img src="images/couple.png" alt="Couples Sensual Massage">
             </div>
             <div class="service-card-content">
                 <h3>Couples Sensual Massage</h3>
