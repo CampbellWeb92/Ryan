@@ -905,15 +905,41 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    track.addEventListener("scroll",()=>{
-        updateDots(
-            Math.round(track.scrollLeft/track.clientWidth)
-        );
+    if (track) {
+        track.addEventListener("scroll",()=>{
+            updateDots(
+                Math.round(track.scrollLeft/track.clientWidth)
+            );
+        });
+    }
+/* --- DISCLAIMER POPUP FIX --- */
+const disclaimerOverlay = document.getElementById("disclaimerOverlay");
+const btnAgeVerifyPass = document.getElementById("btnAgeVerifyPass");
+const btnAgeVerifyFail = document.getElementById("btnAgeVerifyFail");
+
+if (disclaimerOverlay) {
+    disclaimerOverlay.classList.add("layout-visible");
+    document.body.style.overflow = "hidden";
+}
+
+if (btnAgeVerifyPass) {
+    btnAgeVerifyPass.addEventListener("click", () => {
+        disclaimerOverlay.classList.remove("layout-visible");
+        document.body.style.overflow = "";
     });
+}
+
+if (btnAgeVerifyFail) {
+    btnAgeVerifyFail.addEventListener("click", () => {
+        window.location.href = "https://www.google.com";
+    });
+}
 
 });
 </script>
- <body>
+</head>
+<body>
+    
    <!-- --- R18 CONTROL OVERLAY BACKDROP --- -->
 <div id="disclaimerOverlay" class="age-gate-backdrop" role="alertdialog" aria-modal="true">
     <div class="age-gate-container">
@@ -1128,6 +1154,16 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="gallery-slide">
                 <img src="images/Ryan3.jpg">
             </div>
+            <div class="gallery-slide">
+                <img src="images/Ryan4.jpg">
+            </div>
+               <div class="gallery-slide">
+                <img src="images/Ryan5.jpg">
+            </div>
+               <div class="gallery-slide">
+                <img src="images/Ryan6.jpg">
+            </div>
+
         </div>
     </div>
 
@@ -1135,6 +1171,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <span class="dot" onclick="scrollToSlide(1)"></span>
         <span class="dot" onclick="scrollToSlide(2)"></span>
         <span class="dot" onclick="scrollToSlide(3)"></span>
+         <span class="dot" onclick="scrollToSlide(4)"></span>
+          <span class="dot" onclick="scrollToSlide(5)"></span>
+           <span class="dot" onclick="scrollToSlide(6)"></span>
     </div>
 
 </section>
